@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<title>Mosaic Engine Workspace</title>
+<script>
+	// update_portals.sh writes this file. A link changed by hand is replaced on the next tunnel start.
+	var ERP_URL = "https://kde-practitioners-playlist-skilled.trycloudflare.com";
+	var PORTAL_URL = ERP_URL + "/login?redirect-to=%2Femployee-dashboard";
+
+	window.location.replace(PORTAL_URL);
+</script>
+<style>
+	body {
+		margin: 0;
+		min-height: 100vh;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding: 16px;
+		box-sizing: border-box;
+		background: #f7f7fb;
+		color: #15173a;
+		font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+		text-align: center;
+	}
+	a { color: #4f4ad8; }
+	@media (prefers-color-scheme: dark) {
+		body { background: #070a24; color: #fff; }
+		a { color: #a9a6ff; }
+	}
+</style>
+</head>
+<body>
+	<main>
+		<h1>Mosaic Engine Workspace</h1>
+		<p>Opening the portal&hellip;</p>
+		<p><a id="portal-link" href="#">Click here if it doesn't open</a></p>
+		<noscript><p>Please turn on JavaScript to open the portal.</p></noscript>
+	</main>
+	<script>
+		document.getElementById("portal-link").href = PORTAL_URL;
+	</script>
+</body>
+</html>
