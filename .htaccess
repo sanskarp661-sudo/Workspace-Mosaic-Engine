@@ -1,0 +1,10 @@
+# update_portals.sh copies this into each portal repo.
+# Never cached: the page holds the ERP's current link, which changes whenever the tunnel restarts.
+<IfModule mod_headers.c>
+	Header set Cache-Control "no-cache, no-store, must-revalidate"
+</IfModule>
+
+# Every address gets the page, which forwards it to the ERP.
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^ index.html [L]
